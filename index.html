@@ -1,660 +1,205 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💪 My Hyrox Journey 2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Pacifico&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --pink: #FF6B9D;
-      --pink-light: #FFB3D1;
-      --pink-pale: #FFF0F6;
-      --peach: #FFB347;
-      --peach-light: #FFE0B2;
-      --mint: #63E6BE;
-      --mint-light: #D6FAF0;
-      --lavender: #C9B1FF;
-      --lavender-light: #EDE7FF;
-      --coral: #FF8C69;
-      --coral-light: #FFD5C8;
-      --sky: #74C0FC;
-      --sky-light: #DBEAFE;
-      --yellow: #FFD43B;
-      --yellow-light: #FFF9DB;
-      --red: #FF6B6B;
-      --red-light: #FFE5E5;
-      --bg: #FFF5F9;
-      --card-bg: #FFFFFF;
-      --text: #3D2C35;
-      --text-muted: #9B7A88;
-      --border: #FFD6E8;
-      --shadow: 0 4px 20px rgba(255,107,157,0.12);
-      --radius: 20px;
-      --radius-sm: 12px;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🏃‍♀️ My Hyrox Journey 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Pacifico&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --pink: #FF6B9D; --pink-light: #FFB3D1; --pink-pale: #FFF0F6;
+            --peach: #FFB347; --mint: #63E6BE; --sky: #74C0FC;
+            --lavender: #C9B1FF; --text: #3D2C35; --bg: #FFF5F9;
+            --card-bg: #FFFFFF; --border: #FFD6E8;
+            --shadow: 0 4px 15px rgba(255,107,157,0.1);
+        }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); padding-bottom: 50px; }
 
-    body {
-      font-family: 'Nunito', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
+        header {
+            background: linear-gradient(135deg, #FF6B9D, #FF8C69);
+            padding: 40px 20px; text-align: center; color: white;
+        }
+        header h1 { font-family: 'Pacifico', cursive; font-size: 32px; }
 
-    header {
-      background: linear-gradient(135deg, #FF6B9D 0%, #FF8C69 50%, #FFB347 100%);
-      padding: 40px 20px 60px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+        .race-banner {
+            background: #3D2C35; color: white; margin: -20px 15px 20px;
+            border-radius: 15px; padding: 20px; display: grid; gap: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .race-item { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #555; padding-bottom: 8px; }
+        .race-item:last-child { border: none; }
+        .race-tag { background: var(--pink); padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; }
 
-    header::before {
-      content: '';
-      position: absolute;
-      top: -40px; left: -40px;
-      width: 180px; height: 180px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; right: -30px;
-      width: 220px; height: 220px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 50%;
-    }
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 15px 20px; }
+        .stat-card { background: white; padding: 15px; border-radius: 15px; border: 1px solid var(--border); text-align: center; }
+        .stat-val { font-size: 18px; font-weight: 900; color: var(--pink); }
 
-    .header-emoji {
-      font-size: 56px;
-      display: block;
-      margin-bottom: 8px;
-      animation: bounce 2s infinite;
-    }
+        .month-nav { display: flex; overflow-x: auto; gap: 10px; padding: 10px 15px; scrollbar-width: none; }
+        .month-tab { 
+            flex: 0 0 auto; padding: 8px 20px; border-radius: 20px; border: 2px solid var(--border); 
+            background: white; cursor: pointer; font-weight: bold;
+        }
+        .month-tab.active { background: var(--pink); color: white; border-color: var(--pink); }
 
-    @keyframes bounce {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+        .calendar-container { padding: 15px; }
+        .cal-grid { 
+            background: white; border-radius: 15px; overflow: hidden; 
+            border: 1px solid var(--border); display: grid; grid-template-columns: repeat(7, 1fr);
+        }
+        .weekday { background: #f8f9fa; padding: 10px 0; text-align: center; font-size: 12px; font-weight: 800; border-bottom: 1px solid var(--border); }
+        .day { 
+            min-height: 90px; padding: 5px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            cursor: pointer; transition: 0.2s; position: relative;
+        }
+        .day:nth-child(7n) { border-right: none; }
+        .day.today { background: var(--pink-pale); }
+        .day.completed { background: #d4edda; opacity: 0.7; }
+        .day.completed .day-num { text-decoration: line-through; }
+        
+        .day-num { font-weight: bold; font-size: 13px; }
+        .day-task { font-size: 10px; line-height: 1.2; margin-top: 4px; display: block; }
+        
+        /* Task Colors */
+        .task-run { color: #1565C0; font-weight: bold; }
+        .task-rest { color: #2E7D32; font-weight: bold; }
+        .task-race { background: var(--pink); color: white; padding: 2px; border-radius: 4px; text-align: center; }
 
-    header h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: clamp(28px, 5vw, 48px);
-      color: #fff;
-      text-shadow: 2px 3px 0px rgba(0,0,0,0.1);
-      margin-bottom: 8px;
-    }
-
-    header p {
-      color: rgba(255,255,255,0.92);
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .race-banner {
-      background: linear-gradient(135deg, #3D2C35 0%, #5C3D4A 100%);
-      margin: -20px 20px 0;
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      position: relative;
-      z-index: 10;
-      box-shadow: 0 8px 32px rgba(61,44,53,0.3);
-    }
-
-    .race-icon { font-size: 40px; }
-
-    .race-info h2 {
-      color: var(--yellow);
-      font-size: 18px;
-      font-weight: 800;
-      font-family: 'Pacifico', cursive;
-    }
-
-    .race-info p {
-      color: rgba(255,255,255,0.85);
-      font-size: 13px;
-      margin-top: 2px;
-    }
-
-    .race-dates {
-      margin-left: auto;
-      text-align: right;
-    }
-
-    .race-dates .date-pill {
-      background: var(--pink);
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 20px;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .race-dates .date-pill.travel {
-      background: var(--peach);
-    }
-
-    .legend {
-      margin: 24px 20px 0;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    .legend h3 {
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    .legend-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .legend-dot {
-      width: 14px; height: 14px;
-      border-radius: 4px;
-      flex-shrink: 0;
-    }
-
-    .month-nav {
-      display: flex;
-      overflow-x: auto;
-      gap: 8px;
-      padding: 20px 20px 8px;
-      scrollbar-width: none;
-    }
-    .month-nav::-webkit-scrollbar { display: none; }
-
-    .month-tab {
-      flex-shrink: 0;
-      background: white;
-      border: 2px solid var(--border);
-      border-radius: 50px;
-      padding: 8px 16px;
-      font-size: 13px;
-      font-weight: 700;
-      font-family: 'Nunito', sans-serif;
-      cursor: pointer;
-      transition: all 0.2s;
-      color: var(--text-muted);
-    }
-
-    .month-tab:hover {
-      border-color: var(--pink);
-      color: var(--pink);
-    }
-
-    .month-tab.active {
-      background: var(--pink);
-      border-color: var(--pink);
-      color: white;
-      box-shadow: 0 4px 12px rgba(255,107,157,0.35);
-    }
-
-    .month-tab.race-month {
-      border-color: var(--yellow);
-      color: #3D2C35;
-    }
-
-    .month-tab.race-month.active {
-      background: linear-gradient(135deg, #FF6B9D, #FFB347);
-      border-color: transparent;
-      color: white;
-    }
-
-    .calendar-container {
-      padding: 12px 20px 40px;
-    }
-
-    .month-section { display: none; }
-    .month-section.active { display: block; }
-
-    .month-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .month-header h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 26px;
-      color: var(--pink);
-    }
-
-    .month-header .month-emoji { font-size: 28px; }
-
-    .phase-badge {
-      margin-left: auto;
-      background: var(--lavender-light);
-      color: #6B47DC;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 20px;
-    }
-
-    .cal-grid {
-      background: white;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    .cal-weekdays {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      background: linear-gradient(135deg, #FF6B9D, #FF8C69);
-    }
-
-    .cal-weekday {
-      text-align: center;
-      padding: 10px 4px;
-      font-size: 12px;
-      font-weight: 800;
-      color: white;
-      letter-spacing: 0.5px;
-    }
-
-    .cal-days {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 1px;
-      background: var(--border);
-    }
-
-    .cal-day {
-      background: white;
-      min-height: 80px;
-      padding: 6px;
-      position: relative;
-      transition: background 0.15s;
-    }
-
-    .cal-day:hover { background: #FFF8FB; }
-    .cal-day.empty { background: #FAFAFA; }
-
-    .day-num {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 4px;
-      line-height: 1;
-    }
-
-    .cal-day.other-month .day-num { color: #ccc; }
-
-    .day-tag {
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 6px;
-      display: block;
-      margin-bottom: 2px;
-      line-height: 1.4;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .tag-strength { background: var(--lavender-light); color: #5B3DC8; }
-    .tag-cardio { background: var(--sky-light); color: #1565C0; }
-    .tag-hiit { background: var(--coral-light); color: #B34400; }
-    .tag-rest { background: var(--mint-light); color: #1A7A5E; }
-    .tag-nutrition { background: var(--yellow-light); color: #7B5800; }
-    .tag-race { background: linear-gradient(135deg,#FF6B9D,#FFB347); color: white; }
-    .tag-travel { background: var(--peach-light); color: #7B4400; }
-    .tag-tapering { background: #F3E8FF; color: #6B21A8; }
-    .tag-hyrox { background: linear-gradient(135deg,#3D2C35,#5C3D4A); color: var(--yellow); }
-    .tag-deload { background: var(--mint-light); color: #0F5132; }
-    .tag-mobility { background: #FEF3C7; color: #92400E; }
-
-    .cal-day.is-race {
-      background: linear-gradient(135deg, #FFF0F6, #FFF9DB);
-      border: 2px solid var(--pink);
-    }
-
-    .cal-day.is-travel { background: var(--peach-light); }
-    .cal-day.is-rest { background: var(--mint-light); }
-
-    .nutrition-card {
-      margin-top: 16px;
-      background: white;
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .nutrition-card h3 {
-      font-size: 16px;
-      font-weight: 800;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nutrition-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 10px;
-    }
-
-    .nutrition-item {
-      background: var(--pink-pale);
-      border-radius: var(--radius-sm);
-      padding: 10px 12px;
-      text-align: center;
-    }
-
-    .nutrition-item .n-emoji { font-size: 22px; display: block; margin-bottom: 4px; }
-    .nutrition-item .n-label { font-size: 11px; font-weight: 700; color: var(--text-muted); }
-    .nutrition-item .n-value { font-size: 13px; font-weight: 800; color: var(--text); margin-top: 2px; }
-
-    .progress-section {
-      margin: 24px 20px 0;
-      background: white;
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .progress-section h3 {
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    .progress-bar-wrap {
-      background: var(--border);
-      border-radius: 20px;
-      height: 16px;
-      overflow: hidden;
-      position: relative;
-      margin-bottom: 6px;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #FF6B9D, #FFB347);
-      border-radius: 20px;
-      transition: width 0.8s ease;
-    }
-
-    .progress-labels {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 480px) {
-      .cal-day { min-height: 60px; padding: 4px; }
-      .day-tag { font-size: 9px; padding: 1px 4px; }
-      .day-num { font-size: 11px; }
-      .race-banner { flex-wrap: wrap; }
-      .race-dates { margin-left: 0; margin-top: 8px; display: flex; gap: 6px; }
-    }
-  </style>
+        .nutrition-info { 
+            margin: 15px; background: white; border-radius: 15px; padding: 15px; 
+            border: 1px solid var(--border); 
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <span class="header-emoji">🏃‍♀️</span>
-    <h1>My Hyrox Journey</h1>
-    <p>✨ Train Hard · Eat Clean · Slay the Race ✨</p>
-  </header>
+<header>
+    <h1>Hyrox Girl 2026</h1>
+    <p>Age: 39 | 165cm | 55kg</p>
+</header>
 
-  <div class="race-banner">
-    <div class="race-icon">🏆</div>
-    <div class="race-info">
-      <h2>Hyrox Shanghai 2025</h2>
-      <p>🇨🇳 เซี้ยงไฮ้ · เป้าหมายสุดท้ายของเรา!</p>
+<div class="race-banner">
+    <div class="race-item">
+        <div><strong>Hyrox Shanghai</strong><br><small>Women's Doubles</small></div>
+        <div class="race-tag">17 MAY 2026</div>
     </div>
-    <div class="race-dates">
-      <span class="date-pill travel">✈️ เดินทาง 16 พ.ค.</span>
-      <span class="date-pill">🏅 แข่ง 17-18 พ.ค.</span>
-      <span class="date-pill travel">🏠 กลับ 19 พ.ค.</span>
+    <div class="race-item">
+        <div><strong>Hyrox Thailand</strong><br><small>Women's Pro/Open (Solo)</small></div>
+        <div class="race-tag" style="background:var(--peach)">15 AUG 2026</div>
     </div>
-  </div>
+</div>
 
-  <div class="progress-section">
-    <h3>🎯 Countdown to Race Day</h3>
-    <div class="progress-bar-wrap">
-      <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+<div class="stats-grid">
+    <div class="stat-card">
+        <p><small>Daily Calories</small></p>
+        <div class="stat-val">2,150 kcal</div>
     </div>
-    <div class="progress-labels">
-      <span id="progressStart">เริ่มต้น</span>
-      <span id="progressDay">— วัน</span>
-      <span>🏅 Race Day!</span>
+    <div class="stat-card">
+        <p><small>Protein Goal</small></p>
+        <div class="stat-val">110g - 125g</div>
     </div>
-  </div>
+</div>
 
-  <div class="legend">
-    <h3>🎨 สัญลักษณ์ตาราง</h3>
-    <div class="legend-grid">
-      <div class="legend-item"><div class="legend-dot" style="background:#C9B1FF"></div>Strength</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#74C0FC"></div>Cardio</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#FF8C69"></div>HIIT/Functional</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#63E6BE"></div>Rest &amp; Recovery</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#FFD43B"></div>โภชนาการพิเศษ</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#FF6B9D"></div>Race/Travel</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#E9D5FF"></div>Tapering</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#D1FAE5"></div>Deload Week</div>
-    </div>
-  </div>
+<div class="month-nav" id="monthNav"></div>
+<div class="calendar-container" id="calendar"></div>
 
-  <div class="month-nav" id="monthNav"></div>
-  <div class="calendar-container" id="calContainer"></div>
+<div class="nutrition-info">
+    <h3 style="margin-bottom:10px">🥗 Nutrition Guide (18:00-20:00 Window)</h3>
+    <p style="font-size: 14px; line-height: 1.6;">
+        • <strong>Pre-Workout (17:00):</strong> กล้วย 1 ลูก หรือ ขนมปังโฮลวีต<br>
+        • <strong>During:</strong> จิบน้ำผสม Electrolytes<br>
+        • <strong>Post-Workout (20:30):</strong> โปรตีน 30-40g + คาร์โบไฮเดรตเชิงซ้อน<br>
+        • <strong>Note:</strong> ดื่มน้ำให้ได้ 2.5 - 3 ลิตรต่อวัน
+    </p>
+</div>
 
-  <script>
-    const MONTHS = [
-      { name: 'มกราคม', short: 'ม.ค.', emoji: '🌸', year: 2025, month: 1, phase: 'Base Building', phaseColor: '#6B47DC',
-        nutrition: { cal: '2,200 kcal', protein: '140g', carb: '220g', fat: '70g', note: 'เน้นโปรตีนสูง สร้างกล้ามเนื้อ' } },
-      { name: 'กุมภาพันธ์', short: 'ก.พ.', emoji: '💕', year: 2025, month: 2, phase: 'Base Building', phaseColor: '#6B47DC',
-        nutrition: { cal: '2,300 kcal', protein: '150g', carb: '230g', fat: '72g', note: 'เพิ่ม complex carbs ก่อนซ้อม' } },
-      { name: 'มีนาคม', short: 'มี.ค.', emoji: '🌺', year: 2025, month: 3, phase: 'Build Phase', phaseColor: '#0F6E56',
-        nutrition: { cal: '2,400 kcal', protein: '155g', carb: '250g', fat: '75g', note: 'Carb cycling: high day = ซ้อมหนัก' } },
-      { name: 'เมษายน', short: 'เม.ย.', emoji: '🌼', year: 2025, month: 4, phase: 'Build Phase', phaseColor: '#0F6E56',
-        nutrition: { cal: '2,400 kcal', protein: '160g', carb: '250g', fat: '75g', note: 'Hydration สำคัญ! 3L น้ำ/วัน' } },
-      { name: 'พฤษภาคม', short: 'พ.ค.', emoji: '🏆', year: 2025, month: 5, phase: 'RACE MONTH! 🔥', phaseColor: '#FF6B9D',
-        nutrition: { cal: '2,600 kcal', protein: '160g', carb: '300g', fat: '75g', note: '🍜 Carb load ก่อน race 2 วัน!' } },
-      { name: 'มิถุนายน', short: 'มิ.ย.', emoji: '🌊', year: 2025, month: 6, phase: 'Recovery + Base', phaseColor: '#185FA5',
-        nutrition: { cal: '2,100 kcal', protein: '140g', carb: '200g', fat: '70g', note: 'หลัง race: anti-inflammatory foods' } },
-      { name: 'กรกฎาคม', short: 'ก.ค.', emoji: '☀️', year: 2025, month: 7, phase: 'Strength Block', phaseColor: '#B34400',
-        nutrition: { cal: '2,350 kcal', protein: '155g', carb: '230g', fat: '72g', note: 'Iron & zinc สำคัญช่วงนี้' } },
-      { name: 'สิงหาคม', short: 'ส.ค.', emoji: '💪', year: 2025, month: 8, phase: 'Strength Block', phaseColor: '#B34400',
-        nutrition: { cal: '2,400 kcal', protein: '158g', carb: '240g', fat: '73g', note: 'Creatine loading 5g/วัน' } },
-      { name: 'กันยายน', short: 'ก.ย.', emoji: '🍂', year: 2025, month: 9, phase: 'Peak Training', phaseColor: '#993C1D',
-        nutrition: { cal: '2,500 kcal', protein: '162g', carb: '260g', fat: '76g', note: 'Pre-workout nutrition timing สำคัญ' } },
-      { name: 'ตุลาคม', short: 'ต.ค.', emoji: '🎃', year: 2025, month: 10, phase: 'Peak Training', phaseColor: '#993C1D',
-        nutrition: { cal: '2,500 kcal', protein: '165g', carb: '260g', fat: '76g', note: 'Sleep 8hrs + recovery nutrition' } },
-      { name: 'พฤศจิกายน', short: 'พ.ย.', emoji: '🍁', year: 2025, month: 11, phase: 'Maintenance', phaseColor: '#3B6D11',
-        nutrition: { cal: '2,250 kcal', protein: '150g', carb: '225g', fat: '71g', note: 'ลด volume เพิ่ม intensity' } },
-      { name: 'ธันวาคม', short: 'ธ.ค.', emoji: '✨', year: 2025, month: 12, phase: 'Maintenance + Fun', phaseColor: '#3B6D11',
-        nutrition: { cal: '2,200 kcal', protein: '145g', carb: '220g', fat: '70g', note: 'Mindful eating ช่วงเทศกาล 🎄' } },
-    ];
+<script>
+    const race1 = new Date(2026, 4, 17); // 17 May 2026
+    const race2 = new Date(2026, 7, 15); // 15 Aug 2026
+    const months = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+    
+    let currentViewMonth = new Date().getMonth();
 
-    function getDayPlan(dateObj, monthData) {
-      const d = dateObj.getDate();
-      const dow = dateObj.getDay();
-      const m = dateObj.getMonth() + 1;
+    function init() {
+        renderNav();
+        renderCalendar(currentViewMonth, 2026);
+    }
 
-      if (m === 5 && d === 16) return { tag: 'tag-travel', label: '✈️ เดินทาง', isTravel: true };
-      if (m === 5 && d === 19) return { tag: 'tag-travel', label: '🏠 กลับบ้าน', isTravel: true };
-      if (m === 5 && (d === 17 || d === 18)) return { tag: 'tag-hyrox', label: '🏅 HYROX!', isRace: true };
+    function renderNav() {
+        const nav = document.getElementById('monthNav');
+        months.forEach((m, i) => {
+            const btn = document.createElement('button');
+            btn.className = `month-tab ${i === currentViewMonth ? 'active' : ''}`;
+            btn.innerText = m;
+            btn.onclick = () => {
+                document.querySelectorAll('.month-tab').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderCalendar(i, 2026);
+            };
+            nav.appendChild(btn);
+        });
+    }
 
-      if (m === 5 && d >= 3 && d <= 15) {
-        if (dow === 0) return { tag: 'tag-rest', label: '😴 Rest', isRest: true };
-        if (dow === 3) return { tag: 'tag-nutrition', label: '🥗 Nutrition Focus' };
-        if (dow === 6) return { tag: 'tag-tapering', label: '🧘 Tapering Run' };
-        if (dow === 1 || dow === 4) return { tag: 'tag-tapering', label: '💜 Light Strength' };
-        return { tag: 'tag-mobility', label: '🌿 Mobility' };
-      }
+    function getTask(date) {
+        const day = date.getDay(); // 0 = Sun, 3 = Wed
+        const dateStr = date.toDateString();
+        
+        if (dateStr === race1.toDateString()) return "<span class='task-race'>🏅 RACE DAY (Doubles)</span>";
+        if (dateStr === race2.toDateString()) return "<span class='task-race' style='background:#FFB347'>🏅 RACE DAY (Solo)</span>";
+        
+        if (day === 0) return "<span class='task-rest'>😴 Only Rest Day</span>";
+        if (day === 3) return "<span class='task-run'>🏃 Run Intervals (60-90m)</span>";
+        
+        const tasks = [
+            "🏋️ Strength & Power",
+            "🧩 Hyrox Sim (Wallballs/Sled)",
+            "🏋️ Upper Body + Core",
+            "🏃 Zone 2 Easy Run",
+            "🎯 Functional HIIT"
+        ];
+        return `<span class="day-task">${tasks[day % tasks.length]}<br>⏰ 18:00-20:00</span>`;
+    }
 
-      if (m === 5 && d >= 20) {
-        if (dow === 0 || dow === 3) return { tag: 'tag-rest', label: '😴 Recovery', isRest: true };
-        if (dow === 6) return { tag: 'tag-deload', label: '🚶 Easy Walk' };
-        return { tag: 'tag-mobility', label: '🌿 Mobility' };
-      }
+    function toggleComplete(id) {
+        const el = document.getElementById(id);
+        el.classList.toggle('completed');
+        const isComp = el.classList.contains('completed');
+        localStorage.setItem(id, isComp);
+    }
 
-      if (m === 6) {
-        if (d <= 14) {
-          if (dow === 0 || dow === 3 || dow === 6) return { tag: 'tag-rest', label: '😴 Rest', isRest: true };
-          return { tag: 'tag-deload', label: '🚶 Easy Cardio' };
+    function renderCalendar(month, year) {
+        const container = document.getElementById('calendar');
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const today = new Date();
+
+        let html = `<div class="cal-grid">`;
+        const weekdays = ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส"];
+        weekdays.forEach(w => html += `<div class="weekday">${w}</div>`);
+
+        // Empty slots
+        for (let i = 0; i < firstDay; i++) html += `<div class="day empty"></div>`;
+
+        for (let d = 1; d <= daysInMonth; d++) {
+            const date = new Date(year, month, d);
+            const id = `day-${year}-${month}-${d}`;
+            const isToday = date.toDateString() === today.toDateString() ? 'today' : '';
+            const isDone = localStorage.getItem(id) === 'true' ? 'completed' : '';
+            
+            html += `
+                <div class="day ${isToday} ${isDone}" id="${id}" onclick="toggleComplete('${id}')">
+                    <div class="day-num">${d}</div>
+                    ${getTask(date)}
+                </div>
+            `;
         }
-        if (dow === 0) return { tag: 'tag-rest', label: '😴 Rest', isRest: true };
-        if (dow === 3) return { tag: 'tag-nutrition', label: '🥗 Nutrition Day' };
-        if (dow === 2 || dow === 5) return { tag: 'tag-cardio', label: '🏃 Cardio' };
-        if (dow === 1 || dow === 4) return { tag: 'tag-strength', label: '💪 Strength' };
-        return { tag: 'tag-mobility', label: '🌿 Mobility' };
-      }
-
-      const weekOfMonth = Math.floor((d - 1) / 7);
-      if (weekOfMonth === 3) {
-        if (dow === 0 || dow === 6) return { tag: 'tag-rest', label: '😴 Rest', isRest: true };
-        if (dow === 3) return { tag: 'tag-nutrition', label: '🥗 Nutrition Focus' };
-        return { tag: 'tag-deload', label: '🌿 Deload' };
-      }
-
-      if (dow === 0) return { tag: 'tag-rest', label: '😴 Rest Day', isRest: true };
-      if (dow === 3) return { tag: 'tag-nutrition', label: '🥗 Nutrition Reset' };
-
-      const phase = monthData.phase;
-      if (phase.includes('Base')) {
-        const plans = { 1: { tag: 'tag-strength', label: '🏋️ Strength' }, 2: { tag: 'tag-cardio', label: '🏃 Zone 2 Run' }, 4: { tag: 'tag-hiit', label: '⚡ HIIT' }, 5: { tag: 'tag-cardio', label: '🚴 Bike/Row' }, 6: { tag: 'tag-strength', label: '🏋️ Strength' } };
-        return plans[dow] || { tag: 'tag-mobility', label: '🌿 Mobility' };
-      }
-      if (phase.includes('Build')) {
-        const plans = { 1: { tag: 'tag-strength', label: '🏋️ Heavy Lift' }, 2: { tag: 'tag-cardio', label: '🏃 Tempo Run' }, 4: { tag: 'tag-hiit', label: '⚡ Hyrox Sim.' }, 5: { tag: 'tag-hiit', label: '🎯 Functional' }, 6: { tag: 'tag-strength', label: '💪 Upper Body' } };
-        return plans[dow] || { tag: 'tag-cardio', label: '🏃 Easy Run' };
-      }
-      if (phase.includes('Peak')) {
-        const plans = { 1: { tag: 'tag-hiit', label: '⚡ Race Sim.' }, 2: { tag: 'tag-strength', label: '🏋️ Power' }, 4: { tag: 'tag-hiit', label: '🔥 Max Effort' }, 5: { tag: 'tag-cardio', label: '🏃 Long Run' }, 6: { tag: 'tag-strength', label: '💪 Full Body' } };
-        return plans[dow] || { tag: 'tag-cardio', label: '🚴 Cross-Train' };
-      }
-      if (phase.includes('Strength')) {
-        const plans = { 1: { tag: 'tag-strength', label: '🏋️ Squat Day' }, 2: { tag: 'tag-cardio', label: '🏃 Interval Run' }, 4: { tag: 'tag-hiit', label: '⚡ MetCon' }, 5: { tag: 'tag-strength', label: '💪 Push/Pull' }, 6: { tag: 'tag-cardio', label: '🚴 Long Cardio' } };
-        return plans[dow] || { tag: 'tag-mobility', label: '🌿 Active Rest' };
-      }
-      const plans = { 1: { tag: 'tag-strength', label: '🏋️ Strength' }, 2: { tag: 'tag-cardio', label: '🏃 Cardio' }, 4: { tag: 'tag-hiit', label: '⚡ HIIT' }, 5: { tag: 'tag-strength', label: '💪 Strength' }, 6: { tag: 'tag-cardio', label: '🚴 Fun Cardio' } };
-      return plans[dow] || { tag: 'tag-mobility', label: '🌿 Mobility' };
+        html += `</div>`;
+        container.innerHTML = html;
     }
 
-    function buildCalendar(monthData) {
-      const { year, month, name, emoji, phase, phaseColor, nutrition } = monthData;
-      const firstDay = new Date(year, month - 1, 1).getDay();
-      const daysInMonth = new Date(year, month, 0).getDate();
-      const startOffset = (firstDay === 0) ? 6 : firstDay - 1;
-      const totalCells = Math.ceil((startOffset + daysInMonth) / 7) * 7;
+    init();
+</script>
 
-      let daysHTML = '';
-      for (let i = 0; i < totalCells; i++) {
-        const dayNum = i - startOffset + 1;
-        if (dayNum < 1 || dayNum > daysInMonth) { daysHTML += `<div class="cal-day empty"></div>`; continue; }
-        const dateObj = new Date(year, month - 1, dayNum);
-        const plan = getDayPlan(dateObj, monthData);
-        const extraClass = plan.isRace ? 'is-race' : plan.isTravel ? 'is-travel' : plan.isRest ? 'is-rest' : '';
-        daysHTML += `<div class="cal-day ${extraClass}"><div class="day-num">${dayNum}</div><span class="day-tag ${plan.tag}">${plan.label}</span></div>`;
-      }
-
-      const weekdays = ['จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส', 'อา'];
-      return `
-        <div class="month-header">
-          <span class="month-emoji">${emoji}</span>
-          <h2>${name} ${year}</h2>
-          <span class="phase-badge" style="background:${phaseColor}20;color:${phaseColor}">${phase}</span>
-        </div>
-        <div class="cal-grid">
-          <div class="cal-weekdays">${weekdays.map(d => `<div class="cal-weekday">${d}</div>`).join('')}</div>
-          <div class="cal-days">${daysHTML}</div>
-        </div>
-        <div class="nutrition-card">
-          <h3>🥗 โภชนาการประจำเดือน</h3>
-          <div class="nutrition-grid">
-            <div class="nutrition-item"><span class="n-emoji">🔥</span><div class="n-label">Calories/วัน</div><div class="n-value">${nutrition.cal}</div></div>
-            <div class="nutrition-item"><span class="n-emoji">🥩</span><div class="n-label">Protein</div><div class="n-value">${nutrition.protein}</div></div>
-            <div class="nutrition-item"><span class="n-emoji">🍚</span><div class="n-label">Carbohydrate</div><div class="n-value">${nutrition.carb}</div></div>
-            <div class="nutrition-item"><span class="n-emoji">🥑</span><div class="n-label">Healthy Fat</div><div class="n-value">${nutrition.fat}</div></div>
-          </div>
-          <div style="margin-top:10px;background:var(--yellow-light);border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600;color:#7B5800;">💡 ${nutrition.note}</div>
-        </div>`;
-    }
-
-    const nav = document.getElementById('monthNav');
-    const container = document.getElementById('calContainer');
-
-    MONTHS.forEach((m, i) => {
-      const isRace = m.month === 5;
-      const tab = document.createElement('button');
-      tab.className = `month-tab${isRace ? ' race-month' : ''}${i === 0 ? ' active' : ''}`;
-      tab.textContent = `${m.emoji} ${m.short}`;
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.month-tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.month-section').forEach(s => s.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(`month-${i}`).classList.add('active');
-      });
-      nav.appendChild(tab);
-
-      const section = document.createElement('div');
-      section.className = `month-section${i === 0 ? ' active' : ''}`;
-      section.id = `month-${i}`;
-      section.innerHTML = buildCalendar(m);
-      container.appendChild(section);
-    });
-
-    const today = new Date();
-    const raceDay = new Date(2025, 4, 17);
-    const startDay = new Date(2025, 0, 1);
-    const totalDays = (raceDay - startDay) / 86400000;
-    const elapsed = (today - startDay) / 86400000;
-    const pct = Math.min(100, Math.max(0, (elapsed / totalDays) * 100));
-    const remaining = Math.max(0, Math.ceil((raceDay - today) / 86400000));
-
-    document.getElementById('progressFill').style.width = pct.toFixed(1) + '%';
-    document.getElementById('progressStart').textContent = '1 ม.ค. 2025';
-    document.getElementById('progressDay').textContent = remaining > 0 ? `เหลือ ${remaining} วัน! 🔥` : '🎉 Race Week!';
-
-    const currentMonth = today.getMonth();
-    if (currentMonth < 12) {
-      document.querySelectorAll('.month-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.month-section').forEach(s => s.classList.remove('active'));
-      const targetIdx = Math.min(currentMonth, 11);
-      document.querySelectorAll('.month-tab')[targetIdx].classList.add('active');
-      document.getElementById(`month-${targetIdx}`).classList.add('active');
-    }
-  </script>
 </body>
 </html>
